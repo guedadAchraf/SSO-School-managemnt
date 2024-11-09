@@ -1,0 +1,47 @@
+{
+  "name": "school-management-system",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "dev": "concurrently \"node server.js\" \"ng serve admin --port 4200\" \"ng serve student --port 4201\" \"ng serve teacher --port 4202\"",
+    "dev:admin": "ng serve admin --port 4200",
+    "dev:student": "ng serve student --port 4202",
+    "dev:teacher": "ng serve teacher --port 4201",
+    "build": "ng build",
+    "setup:keycloak": "node keycloak-setup.js",
+    "server": "node server.js",
+    "start:api": "node server.js",
+    "start:all": "start-services.bat"
+  },
+  "dependencies": {
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "axios": "^1.6.2",
+    "chart.js": "^4.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "keycloak-angular": "^15.0.0",
+    "keycloak-js": "^22.0.5",
+    "ng2-charts": "^5.0.3",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^7.6.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "~5.2.2"
+  }
+}

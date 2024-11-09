@@ -1,0 +1,161 @@
+{
+    "realm": "school-realm",
+    "enabled": true,
+    "displayName": "School Management System",
+    "loginTheme": "keycloak",
+    "accessTokenLifespan": 300,
+    "ssoSessionMaxLifespan": 36000,
+    "clients": [
+      {
+        "clientId": "school-client",
+        "enabled": true,
+        "publicClient": true,
+        "standardFlowEnabled": true,
+        "implicitFlowEnabled": false,
+        "directAccessGrantsEnabled": true,
+        "serviceAccountsEnabled": false,
+        "redirectUris": [
+          "http://localhost:4200/*",
+          "http://localhost:4201/*",
+          "http://localhost:4202/*"
+        ],
+        "webOrigins": [
+          "http://localhost:4200",
+          "http://localhost:4201",
+          "http://localhost:4202"
+        ],
+        "adminUrl": "http://localhost:4200",
+        "baseUrl": "http://localhost:4200",
+        "defaultClientScopes": [
+          "web-origins",
+          "roles",
+          "profile",
+          "email"
+        ]
+      }
+    ],
+    "roles": {
+      "realm": [
+        {
+          "name": "admin",
+          "description": "Administrator role",
+          "composite": false,
+          "clientRole": false
+        },
+        {
+          "name": "teacher",
+          "description": "Teacher role",
+          "composite": false,
+          "clientRole": false
+        },
+        {
+          "name": "student",
+          "description": "Student role",
+          "composite": false,
+          "clientRole": false
+        },
+        {
+          "name": "parent",
+          "description": "Parent role",
+          "composite": false,
+          "clientRole": false
+        }
+      ]
+    },
+    "users": [
+      {
+        "username": "Achraf",
+        "enabled": true,
+        "email": "admin@school.com",
+        "firstName": "Admin",
+        "lastName": "User",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "Admin123",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["admin"],
+        "clientRoles": {
+          "school-client": ["admin"]
+        }
+      },
+      {
+        "username": "teacher.user",
+        "enabled": true,
+        "email": "teacher@school.com",
+        "firstName": "Teacher",
+        "lastName": "User",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "password",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["teacher"],
+        "clientRoles": {
+          "school-client": ["teacher"]
+        }
+      },
+      {
+        "username": "student.user",
+        "enabled": true,
+        "email": "student@school.com",
+        "firstName": "Student",
+        "lastName": "User",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "password",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["student"],
+        "clientRoles": {
+          "school-client": ["student"]
+        }
+      },
+      {
+        "username": "parent.user",
+        "enabled": true,
+        "email": "parent@school.com",
+        "firstName": "Parent",
+        "lastName": "User",
+        "credentials": [
+          {
+            "type": "password",
+            "value": "password",
+            "temporary": false
+          }
+        ],
+        "realmRoles": ["parent"],
+        "clientRoles": {
+          "school-client": ["parent"]
+        }
+      }
+    ],
+    "defaultDefaultClientScopes": [
+      "web-origins",
+      "roles",
+      "profile",
+      "email"
+    ],
+    "browserFlow": "browser",
+    "registrationFlow": "registration",
+    "directGrantFlow": "direct grant",
+    "resetCredentialsFlow": "reset credentials",
+    "clientAuthenticationFlow": "clients",
+    "dockerAuthenticationFlow": "docker auth",
+    "attributes": {
+      "clientSessionIdleTimeout": "0",
+      "clientSessionMaxLifespan": "0",
+      "clientOfflineSessionIdleTimeout": "0",
+      "clientOfflineSessionMaxLifespan": "0",
+      "actionTokenGeneratedByAdminLifespan": "43200",
+      "actionTokenGeneratedByUserLifespan": "300",
+      "oauth2DeviceCodeLifespan": "600",
+      "oauth2DevicePollingInterval": "5"
+    }
+  }
